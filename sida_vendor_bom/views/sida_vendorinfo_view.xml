@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="sida_bom_form_view" model="ir.ui.view">
+        <field name="name">mrp.bom.form - sida_vendors</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[1]" position="after">
+                <page string="Vendor Info">
+                    <group name="sida_vendors" string="Vendor Infos">
+                        <group>
+                            <tree default_order="sequence,name desc">
+                                <field name="sida_vendors" />
+                            </tree>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<odoo>
+    <report id="action_sida_report_bom"
+        string="Vendor BOM"
+        model="mrp.bom"
+        report_type="qweb-html"
+        name="sida_bom.report_sida_report_bom_template"
+        />
+<template id="report_sida_report_bom_template">
+    <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <!-- Report page content -->
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="rowcount" t-value="0"/>
+                    <t t-set="records" t-value="o.get_data(o.id)"/>
+                    <table border="2px" padding="5px">
+                        <t t-foreach="records" t-as="record">
+                            <!-- Header row -->
+                            <div t-if="rowcount == 0">
+                                <tr class="bg-primary">
+                                    <th>
+                                        Row
+                                    </th>
+                                    <t t-foreach="record" t-as="val">
+                                        <!-- Data Row Content -->
+                                        <th>
+                                            <t t-esc="val"/>
+                                        </th>
+                                    </t>
+                                </tr>
+                            </div>
+                            <!-- Data rows -->
+                            <div t-if="rowcount > 0">
+                                <tr>
+                                    <td>
+                                        <t t-esc="rowcount"/>
+                                    </td>
+                                    <t t-foreach="record" t-as="val">
+                                        <!-- Data Row Content -->
+                                        <td>
+                                            <t t-esc="val"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </div>
+                            <!-- increment row count -->
+                            <t t-set="rowcount" t-value="rowcount + 1"/>
+                        </t>
+                    </table>
+                </t>
+            </div>
+        </t>
+    </t>
+</template>
+</odoo>
