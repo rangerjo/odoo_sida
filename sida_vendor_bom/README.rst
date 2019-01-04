@@ -11,9 +11,13 @@ This module allows to generate custom BOM reports including vendor information f
 Description
 -----------
 
-* Adds the notebook page //Vendor Info// which allows to add vendors.
-* Adds the print menu //Vendor BOM// which generates a table of all components and the vendor information (vendor code) of the added vendors..
+* Adds the notebook page *Vendor Info* which allows to add vendors.
+* Adds the print menu *Vendor BOM* which generates a table of all components and the vendor information (vendor code) of the added vendors..
+
+.. image:: static/description/screenshot0.png
+   :alt: Vendor Info
 
 Chagelog
 --------
 * 2019-01-04: init
+
