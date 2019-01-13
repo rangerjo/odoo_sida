@@ -19,5 +19,6 @@ Description
 
 Chagelog
 --------
+* 2019-01-13: bug fix in data model relations
 * 2019-01-04: init
 
