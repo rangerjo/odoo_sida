@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     'name': 'Sida Vendor Code URL Product',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'summary': 'This module turns the product vendor reference code into an external link to the product..',
     'author': 'Jonas Amstutz',
     'license': 'AGPL-3',

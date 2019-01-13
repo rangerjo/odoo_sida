@@ -17,5 +17,6 @@ Description
 
 Chagelog
 --------
+* 2019-01-13: bug fix to avoid error on product creation
 * 2019-01-06: init
 

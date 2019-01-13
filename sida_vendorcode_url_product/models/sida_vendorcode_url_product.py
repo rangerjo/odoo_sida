@@ -3,27 +3,25 @@
 
 import logging
 from odoo import models, fields, api
-import requests
-import base64
 
 _logger = logging.getLogger(__name__)
 
 class ProductSupplierInfo(models.Model):
     _inherit = 'product.supplierinfo'
-    
+
 
     sida_product_url = fields.Html(
-                                    string = "Vendor Product Code",
-                                    compute = '_create_url',
-                                    store = False,
-                                    compute_sudo = False
-                                    )
-    @api.depends('name','product_code')
+        string="Vendor Product Code",
+        compute='_create_url',
+        store=False,
+        compute_sudo=False
+    )
+    @api.depends('name', 'product_code')
     def _create_url(self):
-        if self.name.website != False and self.name.website != "":
-            self.sida_product_url = '<a href="' + self.name.website + self.product_code + '" target="_blank">' + self.product_code + '</a>'
+        if (self.name.website != False and self.product_code != False
+                and self.name.website != "" and self.product_code != ""):
+            self.sida_product_url = '<a href="' + self.name.website + \
+                self.product_code + '" target="_blank">' + self.product_code + '</a>'
         else:
             self.sida_product_url = self.product_code
         _logger.debug('Computed url %s'%self.sida_product_url)
-
-   
